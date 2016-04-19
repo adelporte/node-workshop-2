@@ -6,7 +6,7 @@ function firstChar(str1, callback) {
     }, 1000);
 }
 
-firstChar("This is a string", function(str){console.log(str)});
+//firstChar("This is a string", function(str){console.log(str)});
 
 //lastChar
 
@@ -17,4 +17,18 @@ function lastChar(str2, callback) {
     }, 1000);
 }
 
-lastChar("What a great string", function(str) {console.log(str)});
+//lastChar("What a great string", function(str) {console.log(str)});
+
+//getFirstAndLast 
+
+function getFirstAndLast(str, func) {
+    firstChar(str, function(str1){
+        lastChar(str, function(str2) {
+            func(str1 + str2);
+        });
+    });
+}
+
+getFirstAndLast("Hello", function(res){
+    console.log(res);
+})
